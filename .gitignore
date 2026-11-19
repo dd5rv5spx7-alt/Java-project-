@@ -1,0 +1,16 @@
+# build output
+out/
+*.class
+sources.txt
+firmware/host_test
+
+# generated at run time by the program (the dataset copy is in /Dataset)
+Implementation/AgroCTI/data/
+
+# editor / OS files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.iml
+.claude/

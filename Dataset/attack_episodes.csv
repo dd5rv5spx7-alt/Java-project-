@@ -1,0 +1,87 @@
+id,type,node_id,start_step,end_step,campaign,detail
+1,REGIONAL_CAMPAIGN,20,2908,2962,30,constant with noise
+2,REGIONAL_CAMPAIGN,23,2906,2960,30,constant with noise
+3,REGIONAL_CAMPAIGN,21,2906,2960,30,constant with noise
+4,REGIONAL_CAMPAIGN,21,3254,3298,31,drift +0.076/step
+5,REGIONAL_CAMPAIGN,3,3076,3129,0,drift +0.078/step
+6,REGIONAL_CAMPAIGN,15,2753,2804,20,drift +0.076/step
+7,REGIONAL_CAMPAIGN,7,3373,3412,10,drift +0.060/step
+8,REGIONAL_CAMPAIGN,20,3252,3296,31,drift +0.076/step
+9,REGIONAL_CAMPAIGN,12,2753,2804,20,drift +0.076/step
+10,REGIONAL_CAMPAIGN,0,3078,3131,0,drift +0.078/step
+11,REGIONAL_CAMPAIGN,10,3373,3412,10,drift +0.060/step
+12,REGIONAL_CAMPAIGN,23,3252,3296,31,drift +0.076/step
+13,REGIONAL_CAMPAIGN,16,2753,2804,20,drift +0.076/step
+14,REGIONAL_CAMPAIGN,2,3077,3130,0,drift +0.078/step
+15,REGIONAL_CAMPAIGN,9,3374,3413,10,drift +0.060/step
+16,REGIONAL_CAMPAIGN,19,3252,3296,31,drift +0.076/step
+17,REGIONAL_CAMPAIGN,9,3513,3545,11,constant with noise
+18,REGIONAL_CAMPAIGN,10,3511,3543,11,constant with noise
+19,REGIONAL_CAMPAIGN,11,3512,3544,11,constant with noise
+20,REGIONAL_CAMPAIGN,8,3511,3543,11,constant with noise
+21,REGIONAL_CAMPAIGN,14,2753,2804,20,drift +0.076/step
+22,REGIONAL_CAMPAIGN,1,3077,3130,0,drift +0.078/step
+23,REGIONAL_CAMPAIGN,4,3077,3130,0,drift +0.078/step
+24,REGIONAL_CAMPAIGN,16,3586,3624,21,drift +0.060/step
+25,REGIONAL_CAMPAIGN,5,3065,3109,1,drift +0.075/step
+26,REGIONAL_CAMPAIGN,15,3587,3625,21,drift +0.060/step
+27,REGIONAL_CAMPAIGN,17,3586,3624,21,drift +0.060/step
+28,CONSTANT_SPOOF,6,3460,3517,-1,stuck-at value
+29,SPIKE_INJECTION,6,3048,3060,-1,3-4 false spikes in 3 hours
+30,CONSTANT_SPOOF,7,3575,3628,-1,stuck-at value
+31,CONSTANT_SPOOF,12,3460,3529,-1,stuck-at value
+32,REPLAY_SPOOF,7,3705,3731,-1,replays readings from 24 h earlier
+33,REPLAY_SPOOF,18,3130,3161,-1,replays readings from 24 h earlier
+34,CONSTANT_SPOOF,18,3282,3308,-1,fixed value with added noise
+35,SPIKE_INJECTION,19,2836,2848,-1,3-4 false spikes in 3 hours
+36,REPLAY_SPOOF,19,2924,2944,-1,replays readings from 24 h earlier
+37,DRIFT_SPOOF,0,3263,3310,-1,moisture bias +0.17 per step
+38,REPLAY_SPOOF,0,3493,3512,-1,replays readings from 24 h earlier
+39,CONSTANT_SPOOF,19,2638,2681,-1,fixed value with added noise
+40,REPLAY_SPOOF,20,2671,2692,-1,replays readings from 24 h earlier
+41,DRIFT_SPOOF,20,2786,2811,-1,moisture bias +0.18 per step
+42,DRIFT_SPOOF,21,2655,2706,-1,moisture bias +0.19 per step
+43,SPIKE_INJECTION,21,2781,2793,-1,3-4 false spikes in 3 hours
+44,ACTUATOR_INJECTION,0,3691,3696,-1,command burst from 198.51.100.16
+45,ACTUATOR_INJECTION,12,3303,3306,-1,command burst from 198.18.7.73
+46,SPIKE_INJECTION,12,3697,3709,-1,3-4 false spikes in 3 hours
+47,ACTUATOR_INJECTION,8,3681,3687,-1,single stealthy OPEN from 203.0.113.3
+48,CONSTANT_SPOOF,1,3576,3618,-1,fixed value with added noise
+49,ACTUATOR_INJECTION,21,3500,3505,-1,command burst from 198.51.100.251
+50,SPIKE_INJECTION,22,2616,2628,-1,3-4 false spikes in 3 hours
+51,ACTUATOR_INJECTION,13,2892,2898,-1,command burst from 198.19.42.41
+52,CONSTANT_SPOOF,22,3142,3188,-1,stuck-at value
+53,REPLAY_SPOOF,22,3327,3343,-1,replays readings from 24 h earlier
+54,CONSTANT_SPOOF,13,3537,3592,-1,fixed value with added noise
+55,REPLAY_SPOOF,14,2666,2705,-1,replays readings from 24 h earlier
+56,ACTUATOR_INJECTION,23,3029,3035,-1,command burst from 192.0.2.67
+57,CONSTANT_SPOOF,23,2637,2705,-1,fixed value with added noise
+58,CONSTANT_SPOOF,14,3575,3608,-1,stuck-at value
+59,DRIFT_SPOOF,8,3726,3766,-1,moisture bias +0.16 per step
+60,DRIFT_SPOOF,1,2751,2778,-1,moisture bias +0.13 per step
+61,REPLAY_SPOOF,1,3323,3343,-1,replays readings from 24 h earlier
+62,SPIKE_INJECTION,9,2631,2643,-1,3-4 false spikes in 3 hours
+63,ACTUATOR_INJECTION,2,3270,3275,-1,command burst from 192.0.2.113
+64,SPIKE_INJECTION,2,2584,2596,-1,3-4 false spikes in 3 hours
+65,REPLAY_SPOOF,2,3397,3413,-1,replays readings from 24 h earlier
+66,ACTUATOR_INJECTION,3,3336,3342,-1,single stealthy OPEN from 192.0.2.249
+67,DRIFT_SPOOF,9,2753,2786,-1,moisture bias +0.15 per step
+68,CONSTANT_SPOOF,3,3492,3538,-1,fixed value with added noise
+69,CONSTANT_SPOOF,4,3511,3583,-1,stuck-at value
+70,ACTUATOR_INJECTION,10,2796,2801,-1,single stealthy OPEN from 203.0.113.141
+71,REPLAY_SPOOF,10,3171,3187,-1,replays readings from 24 h earlier
+72,DRIFT_SPOOF,14,2900,2933,-1,moisture bias +0.13 per step
+73,CONSTANT_SPOOF,11,3031,3095,-1,stuck-at value
+74,SPIKE_INJECTION,11,2859,2871,-1,3-4 false spikes in 3 hours
+75,REPLAY_SPOOF,11,2729,2754,-1,replays readings from 24 h earlier
+76,SPIKE_INJECTION,15,2960,2972,-1,3-4 false spikes in 3 hours
+77,DRIFT_SPOOF,4,2851,2907,-1,moisture bias +0.15 per step
+78,REPLAY_SPOOF,4,3169,3194,-1,replays readings from 24 h earlier
+79,ACTUATOR_INJECTION,15,3119,3124,-1,single stealthy OPEN from 192.0.2.208
+80,CONSTANT_SPOOF,15,3423,3448,-1,stuck-at value
+81,SPIKE_INJECTION,16,3352,3364,-1,3-4 false spikes in 3 hours
+82,DRIFT_SPOOF,5,3537,3587,-1,moisture bias +0.09 per step
+83,REPLAY_SPOOF,5,2908,2926,-1,replays readings from 24 h earlier
+84,DRIFT_SPOOF,16,2567,2593,-1,moisture bias +0.12 per step
+85,SPIKE_INJECTION,17,3472,3484,-1,3-4 false spikes in 3 hours
+86,DRIFT_SPOOF,17,2663,2693,-1,moisture bias +0.10 per step

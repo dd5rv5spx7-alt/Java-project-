@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agro-CTI - Log in</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page">
+<main class="login-wrap">
+  <form class="login-card" id="loginForm" novalidate>
+    <div class="brand">
+      <img src="favicon.svg" alt="" width="40" height="40">
+      <div>
+        <h1>Agro-CTI</h1>
+        <p>Threat intelligence for precision-agriculture sensor networks</p>
+      </div>
+    </div>
+    <h2>Log in</h2>
+    <p class="form-error" id="loginError" role="alert" hidden></p>
+    <label for="username">Username</label>
+    <input id="username" name="username" autocomplete="username" required autofocus>
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password" autocomplete="current-password" required>
+    <button type="submit" class="primary" id="btnLogin">Log in</button>
+    <p class="hint">Demo accounts (see README): <b>admin</b>, <b>analyst</b>, <b>farmer</b>.</p>
+  </form>
+</main>
+<script src="common.js"></script>
+<script>
+'use strict';
+document.getElementById('loginForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const err = document.getElementById('loginError');
+  const btn = document.getElementById('btnLogin');
+  err.hidden = true;
+  btn.disabled = true;
+  try {
+    await api('/api/login', { method: 'POST', body: {
+      username: document.getElementById('username').value,
+      password: document.getElementById('password').value } });
+    const next = new URLSearchParams(location.search).get('next');
+    location.href = next && next.startsWith('/') && !next.startsWith('//') ? next : 'index.html';
+  } catch (ex) {
+    err.textContent = cap(ex.message);
+    err.hidden = false;
+    document.getElementById('password').select();
+  } finally {
+    btn.disabled = false;
+  }
+});
+</script>
+</body>
+</html>

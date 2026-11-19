@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agro-CTI - Live monitor</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <img src="favicon.svg" alt="" width="34" height="34">
+    <div>
+      <h1>Agro-CTI</h1>
+      <p>Threat intelligence for smart farms</p>
+    </div>
+  </div>
+  <nav class="nav" aria-label="Main">
+    <a href="index.html">Live monitor</a>
+    <a href="records.html#nodes">Farm nodes</a>
+    <a href="records.html#indicators">Threat indicators</a>
+    <a href="records.html#incidents">Incidents</a>
+    <a href="records.html#actions">Response actions</a>
+    <a href="records.html#users" data-admin-only hidden>Users</a>
+  </nav>
+  <div class="who"><span id="userChip" class="user-chip"></span><button id="btnLogout" type="button">Log out</button></div>
+</header>
+
+<div class="livebar">
+  <div class="clock">
+    <div class="clock-time" id="simTime">--</div>
+    <div class="progress"><div id="progressBar"></div></div>
+    <div class="clock-sub" id="progressText">starting...</div>
+  </div>
+  <div class="controls">
+    <button id="btnPause" type="button">Pause</button>
+    <button id="btnSlower" type="button" title="Slower" aria-label="Slower">&minus;</button>
+    <span id="speed">--</span>
+    <button id="btnFaster" type="button" title="Faster" aria-label="Faster">+</button>
+  </div>
+</div>
+
+<main>
+  <section class="kpis">
+    <div class="kpi"><span class="kpi-num" id="kFarms">24</span><span class="kpi-label">farm nodes in 4 regions</span></div>
+    <div class="kpi"><span class="kpi-num" id="kAlarms">0</span><span class="kpi-label">nodes in alarm now</span></div>
+    <div class="kpi"><span class="kpi-num" id="kIncidents">0</span><span class="kpi-label">incidents recorded</span></div>
+    <div class="kpi"><span class="kpi-num" id="kPrecision">--</span><span class="kpi-label">alarms that were real attacks</span></div>
+    <div class="kpi"><span class="kpi-num" id="kRecall">--</span><span class="kpi-label">attack windows caught</span></div>
+  </section>
+
+  <div class="layout">
+    <section class="card farms">
+      <div class="card-head">
+        <h2>Farm network</h2>
+        <div class="legend">
+          <span><i class="dot NORMAL"></i>normal</span><span><i class="dot INFO"></i>explained</span>
+          <span><i class="dot SUSPECT"></i>suspicious</span><span><i class="dot ALERT"></i>alert</span>
+          <span><i class="dot CRITICAL"></i>critical</span>
+        </div>
+      </div>
+      <div class="regions" id="regions"></div>
+      <div class="chart-head">
+        <h3 id="chartTitle">Soil moisture and anomaly score</h3>
+        <div class="legend">
+          <span><i class="line moist"></i>soil moisture</span><span><i class="line score"></i>anomaly score</span>
+          <span><i class="box truth"></i>real attack (ground truth)</span><span><i class="dot ALERT"></i>alarm raised</span>
+        </div>
+      </div>
+      <canvas id="chart" height="330"></canvas>
+    </section>
+
+    <section class="card incidents">
+      <div class="card-head"><h2>Incidents</h2><span class="muted" id="incCount"></span><a class="small-link" href="records.html#incidents">Manage incidents</a></div>
+      <ol id="incidentList" class="incident-list"><li class="empty">No incidents yet.</li></ol>
+    </section>
+  </div>
+
+  <div class="layout bottom">
+    <section class="card">
+      <div class="card-head"><h2>Model comparison (test days)</h2><span class="muted" id="resNote"></span></div>
+      <div class="table-wrap"><table id="resultsTable"></table></div>
+    </section>
+    <section class="card">
+      <div class="card-head"><h2>Threat intelligence</h2><span class="muted" id="feedNote"></span></div>
+      <h3 class="sub">Shared by this network (regional campaigns found)</h3>
+      <ul id="localFeed" class="feed"><li class="empty">None yet.</li></ul>
+      <h3 class="sub">External feed</h3>
+      <div class="table-wrap short"><table id="feedTable"></table></div>
+    </section>
+  </div>
+</main>
+<script src="common.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

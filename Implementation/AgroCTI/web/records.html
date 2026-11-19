@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agro-CTI - Records</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <img src="favicon.svg" alt="" width="34" height="34">
+    <div>
+      <h1>Agro-CTI</h1>
+      <p>Threat intelligence for smart farms</p>
+    </div>
+  </div>
+  <nav class="nav" aria-label="Main">
+    <a href="index.html">Live monitor</a>
+    <a href="records.html#nodes">Farm nodes</a>
+    <a href="records.html#indicators">Threat indicators</a>
+    <a href="records.html#incidents">Incidents</a>
+    <a href="records.html#actions">Response actions</a>
+    <a href="records.html#users" data-admin-only hidden>Users</a>
+  </nav>
+  <div class="who"><span id="userChip" class="user-chip"></span><button id="btnLogout" type="button">Log out</button></div>
+</header>
+
+<main class="records">
+  <section class="card">
+    <div class="rec-head">
+      <div>
+        <h2 id="recTitle">Records</h2>
+        <p class="muted" id="recInfo"></p>
+      </div>
+      <button type="button" class="primary" id="btnAdd">+ Add</button>
+    </div>
+    <div class="rec-tools">
+      <label class="search">
+        <span class="sr-only">Search</span>
+        <input type="search" id="search" placeholder="Search..." autocomplete="off">
+      </label>
+      <span class="muted" id="recCount"></span>
+      <span class="muted readonly-note" id="readonlyNote" hidden>Your role can view these records but not change them.</span>
+    </div>
+    <div class="table-wrap rec-table"><table id="recTable"></table></div>
+  </section>
+</main>
+
+<dialog id="formDialog" aria-labelledby="formTitle">
+  <form id="recForm" method="dialog" novalidate>
+    <h2 id="formTitle">Add</h2>
+    <p class="form-error" id="formError" role="alert" hidden></p>
+    <div id="formFields" class="form-grid"></div>
+    <div class="dialog-buttons">
+      <button type="button" id="btnCancel">Cancel</button>
+      <button type="submit" class="primary" id="btnSave">Save</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="confirmDialog" aria-labelledby="confirmTitle">
+  <form method="dialog">
+    <h2 id="confirmTitle">Delete record?</h2>
+    <p id="confirmText"></p>
+    <div class="dialog-buttons">
+      <button value="cancel" type="submit">Cancel</button>
+      <button value="ok" type="submit" class="danger" id="btnConfirm">Delete</button>
+    </div>
+  </form>
+</dialog>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="common.js"></script>
+<script src="records.js"></script>
+</body>
+</html>
